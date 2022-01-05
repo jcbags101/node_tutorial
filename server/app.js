@@ -4,7 +4,7 @@ const path = require('path')
 const app = express();
 var router  = express.Router();
 
-const names = ['jude', 'clarence'];
+const names = ['jude', 'clarences'];
 
 // create application/json parser
 var jsonParser = bodyParser.json()
