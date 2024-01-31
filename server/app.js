@@ -25,6 +25,17 @@ router.get("/names/:id", (req, res) => {
   res.send(names[id]);
 });
 
+router.post("/names", jsonParser, (req, res) => {
+  const { name } = req.body;
+
+  if (name) {
+    names.push(name);
+    res.send({ names });
+  }
+
+  res.status(401).send("Yow Error!");
+});
+
 router.get("/name/:id", (req, res) => {
   console.log(req.params, req.query);
   res.send({ params: req.params, query: req.query });
